@@ -24,6 +24,8 @@ Create a Slack Workspace [**here**](https://slack.com/get-started#/create) and c
 
 Now that we’ve created the app and obtained the webhook URL, it’s time to start coding.
 
+### Sending Messages: 
+
 We first have to import all the required modules. Now, get your webhook URL and save it to the variable. In a variable, save the message and title you want to send.
 
 Now it’s time to make all the slack data we want to send. It consists of your username and in the  Attachment section we have:
