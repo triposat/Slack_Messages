@@ -5,6 +5,8 @@
 ![](https://img.shields.io/tokei/lines/github/Iamtripathisatyam/Slack_Messages?color=red&label=Lines%20of%20Code)</br>
 ![sds](https://profile-counter.glitch.me/{Slack_Messages}/count.svg)
 
+<p align="center"><img width="15%" src="https://user-images.githubusercontent.com/69134468/129152568-95c527c8-bca4-4491-9272-2ff2105a39c8.png"></p>
+
 We need to make use of webhooks. You can deliver automatic messages from one app to another using webhooks. When you create an Incoming Webhook, you’ll be given a unique URL to which you may send a JSON payload including the message text and some parameters.
 
 ### Setup: 
