@@ -1,0 +1,19 @@
+name: send slack messages
+description: This action sends messages to your slack channel
+inputs:
+  url: 
+    required: true 
+    description: webhook url
+  message: 
+    required: true
+    description: slack message
+
+  title:
+    required: false
+    default: ''
+    description: title of slack message
+  
+
+runs:
+  using: docker 
+  image: 'Dockerfile' 

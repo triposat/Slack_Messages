@@ -2,21 +2,17 @@
 import json
 import sys
 import requests
+import os
+import github
 
-if __name__ == '__main__':
-	# Webhooks URL
-	url = "https://hooks.slack.com/services/xxxyyyzzz"
-	
-	# Message you wanna send
-	message = (
-		"Hi there!, GeeksforGeeks is the Best Learning Platform\
-		for Computer Science Students")
-	
-	# Title
-	title = (f"GeeksforGeeks Bot :satellite:")
-	
-	# All slack data
-	slack_data = {
+# extracting all the input from environments
+url = os.environ['INPUT_URL']
+message = os.environ['INPUT_MESSAGE']
+title = os.environ['INPUT_TITLE']
+
+
+
+slack_data = {
 
 		"username": "Testing",
 		"attachments": [
@@ -33,15 +29,24 @@ if __name__ == '__main__':
 			}
 		]
 	}
-	
-	# Size of the slack data
-	byte_length = str(sys.getsizeof(slack_data))
-	headers = {'Content-Type': "application/json",
-			'Content-Length': byte_length}
-	
-	# Posting requests after dumping the slack data
-	response = requests.post(url, data=json.dumps(slack_data), headers=headers)
-	
-	# Post request is valid or not!
-	if response.status_code != 200:
-		raise Exception(response.status_code, response.text)
+
+def send_message(url,title,slack_data,):
+
+    # Size of the slack data
+    byte_length = str(sys.getsizeof(slack_data))
+    headers = {'Content-Type': "application/json",
+               'Content-Length': byte_length}
+
+    # Posting requests after dumping the slack data
+    response = requests.post(url, data=json.dumps(slack_data),headers=headers)
+
+    # Post request is valid or not!
+    if response.status_code != 200:
+        raise Exception(response.status_code, response.text)
+
+def main():
+	send_message(url,title,slack_data)
+
+
+if __name__ == '__main__':
+	main()
