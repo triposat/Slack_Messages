@@ -1,4 +1,4 @@
-name: send slack messages
+name: slackit
 description: This action sends messages to your slack channel
 inputs:
   url: 
