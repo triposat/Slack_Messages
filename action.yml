@@ -1,4 +1,4 @@
-name: tush-tr/slackit
+name: slackitgh
 description: This action sends messages to your slack channel
 inputs:
   url: 
